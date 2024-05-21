@@ -2,7 +2,7 @@
 
 Simple HTTP API for playing with `User` model.
 
-
+![alt text](image.png)
 ## Files
 
 ### `models/`
