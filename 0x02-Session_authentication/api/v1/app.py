@@ -7,6 +7,20 @@ from api.v1.views import app_views
 from flask import Flask, jsonify, abort, request
 from flask_cors import (CORS, cross_origin)
 import os
+from os import getenv
+
+# Existing imports...
+from api.v1.auth.session_exp_auth import SessionExpAuth
+
+# Existing code...
+
+auth = None
+auth_type = getenv('AUTH_TYPE')
+if auth_type == 'session_exp_auth':
+    auth = SessionExpAuth()
+# other auth_type conditions...
+
+# Existing code...
 
 
 app = Flask(__name__)
