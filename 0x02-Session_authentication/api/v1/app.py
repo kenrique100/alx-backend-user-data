@@ -13,7 +13,12 @@ from os import getenv
 
 # Existing imports...
 
+auth_type = os.getenv('AUTH_TYPE', 'session_exp_auth')
 
+if auth_type == 'session_db_auth':
+    auth = SessionDBAuth()
+else:
+    auth = SessionExpAuth()
 # Existing code...
 
 auth = None
